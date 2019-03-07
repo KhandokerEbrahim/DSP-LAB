@@ -1,0 +1,89 @@
+>> n=0:1:10;
+a=.8;
+x=a.^n;
+stem(n,x);
+>> a=1.2;
+>> x=a.^n;
+>> stem(n,x,'r')
+>> 
+>> n=0:1:10;
+a=.8;
+x=a.^n;
+stem(n,x);
+hold on
+ a=1.2;
+ x=a.^n;
+stem(n,x,'r')
+>> n=0:1:10;
+a=.5;
+x=a.^n;
+stem(n,x);
+hold on
+ a=2;
+ x=a.^n;
+stem(n,x,'r')
+>> n=0:1:10;
+a=.5;
+x=a.^n;
+stem(n,x,'g')
+hold on
+ a=2;
+ x=a.^n;
+stem(n,x,'r')
+ a=2;
+ x=a.^n;
+stem(n,x,'y')
+>> n=0:1:10;
+a=.5;
+x=a.^n;
+stem(n,x,'g')
+hold on
+ a=2;
+ x=a.^n;
+stem(n,x,'r')
+hold on
+ a=2;
+ x=a.^n;
+stem(n,x,'y')
+>> n=0:1:10;
+a=.5;
+x=a.^n;
+stem(n,x,'g')
+hold on
+ a=2;
+ x=a.^n;
+stem(n,x,'r')
+hold on
+ a=5;
+ x=a.^n;
+stem(n,x,'y')
+>> n=0:.2:10;
+x=sin(.12*pi*n);
+stem(n,x,'g')
+>> n=0:.2:10;
+x=sin(.12*pi*n);
+stem(n,x,'g')
+>> n=0:.1:25;
+x=sin(.12*pi*n);
+stem(n,x,'g')
+>> n=0:.1:25;
+x=sin(.12*pi*n);
+stem(n,x,'g')
+hold on
+xn=n+.2*rand(1,length(n));
+stem(n,x,'y')
+hold on
+>> n=0:.1:25;
+x=sin(.12*pi*n);
+stem(n,x,'g')
+hold on
+xn=n+.2*rand(1,length(n));
+stem(xn,x,'y')
+hold on
+>> n=0:.1:6;
+x=sin(.12*pi*n);
+stem(n,x,'g')
+hold on
+xn=n+.2*rand(1,length(n));
+stem(xn,x,'y')
+hold on
