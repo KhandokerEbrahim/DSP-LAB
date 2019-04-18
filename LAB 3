@@ -1,0 +1,80 @@
+n=0:1:7;
+Ts=1/8000;
+xn = sin(2*pi*n*Ts) + .5*sin(2*pi*2000*n*Ts+(3*pi)/4)
+X=fft(xn)
+Y=ifft(X)
+
+
+x=[1 0 0 1];
+y =fft(x);
+subplot(2,1,1)
+stem(abs(y),'k')
+xlabel('m')
+ylabel('X(m)')
+title('Absolute value of DFT sequence')
+subplot(2,1,2)
+stem(angle(y),'k')
+xlabel('m')
+ylabel('Angle of X(m)')
+title('Angle of DFT sequence')
+
+
+
+
+
+
+
+%DFT of regular pulse0
+#problem 3
+fs=500;
+t=-1:1/fs:1;
+x=rectpuls(t,.12);
+subplot(2,2,1)
+plot(t,x)
+grid on
+y=fft(x)
+y=fftshift(y)
+subplot(2,2,2)
+plot(abs(y))
+grid on
+x=rectpuls(t,.02);
+subplot(2,2,3)
+plot(t,x)
+grid on
+y=fft(x)
+y=fftshift(y)
+subplot(2,2,4)
+plot(abs(y))
+grid on
+
+
+% DFT of a 3D rectangular pulse
+
+#problem 4
+x= zeros(32);
+x(12:17)=ones(6,1);
+subplot(2,2,1);
+title('2D rectangular pulse')
+mesh(x)
+x=fft(x)
+% x=fftshift(x)
+subplot(2,2,2)
+mesh(abs(x))
+title('2D frequency doain')
+
+#problem 4
+
+x= zeros(32);
+x(12:17,12:17)=ones(6);
+subplot(2,2,1);
+title('2D rectangular pulse')
+mesh(x)
+x=fft2(x)
+x=fftshift(x)
+subplot(2,2,2)
+mesh(abs(x))
+title('2D frequency doain')
+
+
+
+
