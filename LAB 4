@@ -1,0 +1,45 @@
+%Design a 10th order bandpass butterworth filter with a
+%to 200Hz and Plot both impulse response and frequency response
+Fs = 1000;   %sampling fequency
+n=10; %order of filter
+Wn= [100 200]/500; %Normalize
+[b,a] = butter(n,Wn);
+figure(1)
+[y,t]=impz(b,a,101)
+%sample size
+plot(t,y)
+title('impulse response')
+grid on
+freqz(b,a,512,Fs)
+title('Frequency response ')
+
+Fs= 1000;
+n=10;
+Rp=5;
+Rs=20;
+Wn=[100 200 ]/(Fs/2) %512 samples
+title('Frequency response')
+figure(2)
+[y,t]= impz(b,a,500);
+plot(t,y)
+grid on
+title('Impulse responce of Elliptic filter')
+
+#problem 4
+Y=sin(8*pi*t)  %original
+yn=y+.5*rand(1,lengh(t))
+t=
+
+subplot
+subplot(2,2,2);
+plot(t,yn,'r')
+title('Noise signal')
+[b,a] =buter(2,200/fs);
+z=filter(b,a,yn);
+subplot(2,2,3)
+plot(t,z,'b')
+title('Filtered Signal')
+plot(t,z,)
+subplot(2,2,4)
+plot(t,y,'m',t,z,'k')
+
